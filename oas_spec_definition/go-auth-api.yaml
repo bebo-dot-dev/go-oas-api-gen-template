@@ -86,6 +86,7 @@ components:
       type: object
       properties:
         hostname:
+          description: a computer hostname
           type: string
           example: localhost
     UserAccountDetails:
@@ -96,12 +97,15 @@ components:
       type: object
       properties:
         accountType:
+          description: describes the type of an account (1 = super user, 2 = business user, 3 = end user)
           type: integer
           example: 1
         username:
+          description: the username of an account
           type: string
           example: joe
         password:
+          description: the password of an account
           type: string
           example: password
     NewUserAccount:
@@ -110,9 +114,11 @@ components:
       - created
       properties:
         id:
+          description: the id of an account
           type: integer
           example: 123
         created:
+          description: describes whether an account was created
           type: boolean
           example: true
     ExistingUserAccount:
@@ -121,9 +127,11 @@ components:
       - authenticated
       properties:
         id:
+          description: the id of an account
           type: integer
           example: 123
         authenticated:
+          description: describes whether an account was authenticated
           type: boolean
           example: true
     UserCredentials:
@@ -133,8 +141,10 @@ components:
       type: object
       properties:
         username:
+          description: the username of an account
           type: string
           example: joe
         password:
+          description: the password of an account
           type: string
           example: password
