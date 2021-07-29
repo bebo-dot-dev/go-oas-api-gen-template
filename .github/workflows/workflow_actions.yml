@@ -20,17 +20,17 @@ jobs:
           go-version: 1.16.6
       - name: prepare for code formatting
         shell: bash
-        run: export GO_POST_PROCESS_FILE="gofmt" && go get golang.org/x/tools/cmd/goimports
+        run: export GO_POST_PROCESS_FILE="/usr/local/bin/gofmt -w" && go get golang.org/x/tools/cmd/goimports
       - name: Setup the latest openapi-generator-cli
         shell: bash
         run: curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ./openapi-generator-cli && chmod u+x ./openapi-generator-cli
       - name: Execute go-server codegen
-        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go-server -o ./server -ppackageName=goauthapi -psourceFolder=api --git-user-id=bebo-dot-dev --git-repo-id=go-auth-api/server
+        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go-server -o ./server -ppackageName=api -psourceFolder=api --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/server
       - name: Execute go client codegen
-        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go -o ./client -ppackageName=client --git-user-id=bebo-dot-dev --git-repo-id=go-auth-api/client
+        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go -o ./client -ppackageName=client --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/client
       - name: Format generated Go code
         shell: bash
-        run: goimports -w ./ && cd ./server && go get ./... && go fmt ./... && cd ../client && go fmt ./...
+        run: goimports -w ./ && cd ./server && go get ./... && go fmt ./... && cd ../client && go get ./... && go fmt ./...
       - name: Commit generated Go code
         shell: bash
         run: git config --global user.email "joe@bebo.dev" && git config --global user.name "Joe" && git fetch --all && git add -A && git commit -m "automated codegen commit" && git pull --rebase && git push
