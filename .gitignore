@@ -1,0 +1,4 @@
+*.sh
+openapi-generator-cli
+openapi-generator-cli*.jar
+vendor
