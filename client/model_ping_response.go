@@ -17,6 +17,7 @@ import (
 
 // PingResponse struct for PingResponse
 type PingResponse struct {
+	// a computer hostname
 	Hostname string `json:"hostname"`
 }
 

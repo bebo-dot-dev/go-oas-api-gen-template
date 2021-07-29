@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Username** | **string** |  | 
-**Password** | **string** |  | 
+**Username** | **string** | the username of an account | 
+**Password** | **string** | the password of an account | 
 
 ## Methods
 

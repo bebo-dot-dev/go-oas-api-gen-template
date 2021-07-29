@@ -17,8 +17,10 @@ import (
 
 // ExistingUserAccount struct for ExistingUserAccount
 type ExistingUserAccount struct {
-	Id            int32 `json:"id"`
-	Authenticated bool  `json:"authenticated"`
+	// the id of an account
+	Id int32 `json:"id"`
+	// describes whether an account was authenticated
+	Authenticated bool `json:"authenticated"`
 }
 
 // NewExistingUserAccount instantiates a new ExistingUserAccount object

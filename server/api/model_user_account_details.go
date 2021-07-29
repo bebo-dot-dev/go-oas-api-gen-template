@@ -11,9 +11,13 @@
 package api
 
 type UserAccountDetails struct {
+
+	// describes the type of an account (1 = super user, 2 = business user, 3 = end user)
 	AccountType int32 `json:"accountType"`
 
+	// the username of an account
 	Username string `json:"username"`
 
+	// the password of an account
 	Password string `json:"password"`
 }

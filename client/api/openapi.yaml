@@ -84,6 +84,7 @@ components:
         hostname: localhost
       properties:
         hostname:
+          description: a computer hostname
           example: localhost
           type: string
       required:
@@ -96,12 +97,16 @@ components:
         username: joe
       properties:
         accountType:
+          description: describes the type of an account (1 = super user, 2 = business
+            user, 3 = end user)
           example: 1
           type: integer
         username:
+          description: the username of an account
           example: joe
           type: string
         password:
+          description: the password of an account
           example: password
           type: string
       required:
@@ -115,9 +120,11 @@ components:
         id: 123
       properties:
         id:
+          description: the id of an account
           example: 123
           type: integer
         created:
+          description: describes whether an account was created
           example: true
           type: boolean
       required:
@@ -129,9 +136,11 @@ components:
         id: 123
       properties:
         id:
+          description: the id of an account
           example: 123
           type: integer
         authenticated:
+          description: describes whether an account was authenticated
           example: true
           type: boolean
       required:
@@ -143,9 +152,11 @@ components:
         username: joe
       properties:
         username:
+          description: the username of an account
           example: joe
           type: string
         password:
+          description: the password of an account
           example: password
           type: string
       required:

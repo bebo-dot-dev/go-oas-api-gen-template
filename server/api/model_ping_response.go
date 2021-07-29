@@ -11,5 +11,7 @@
 package api
 
 type PingResponse struct {
+
+	// a computer hostname
 	Hostname string `json:"hostname"`
 }

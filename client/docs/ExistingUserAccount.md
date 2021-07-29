@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
-**Authenticated** | **bool** |  | 
+**Id** | **int32** | the id of an account | 
+**Authenticated** | **bool** | describes whether an account was authenticated | 
 
 ## Methods
 

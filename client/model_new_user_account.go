@@ -17,8 +17,10 @@ import (
 
 // NewUserAccount struct for NewUserAccount
 type NewUserAccount struct {
-	Id      int32 `json:"id"`
-	Created bool  `json:"created"`
+	// the id of an account
+	Id int32 `json:"id"`
+	// describes whether an account was created
+	Created bool `json:"created"`
 }
 
 // NewNewUserAccount instantiates a new NewUserAccount object

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
-**Created** | **bool** |  | 
+**Id** | **int32** | the id of an account | 
+**Created** | **bool** | describes whether an account was created | 
 
 ## Methods
 

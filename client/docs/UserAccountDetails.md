@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountType** | **int32** |  | 
-**Username** | **string** |  | 
-**Password** | **string** |  | 
+**AccountType** | **int32** | describes the type of an account (1 &#x3D; super user, 2 &#x3D; business user, 3 &#x3D; end user) | 
+**Username** | **string** | the username of an account | 
+**Password** | **string** | the password of an account | 
 
 ## Methods
 

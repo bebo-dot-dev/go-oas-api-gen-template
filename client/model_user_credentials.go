@@ -17,7 +17,9 @@ import (
 
 // UserCredentials struct for UserCredentials
 type UserCredentials struct {
+	// the username of an account
 	Username string `json:"username"`
+	// the password of an account
 	Password string `json:"password"`
 }
 

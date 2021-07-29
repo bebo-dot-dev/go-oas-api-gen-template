@@ -11,7 +11,10 @@
 package api
 
 type NewUserAccount struct {
+
+	// the id of an account
 	Id int32 `json:"id"`
 
+	// describes whether an account was created
 	Created bool `json:"created"`
 }
