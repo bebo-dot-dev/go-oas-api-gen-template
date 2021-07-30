@@ -33,9 +33,9 @@ jobs:
         shell: bash
         run: curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ./openapi-generator-cli && chmod u+x ./openapi-generator-cli
       - name: Execute go-server codegen
-        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go-server -o ./server -ppackageName=api -psourceFolder=api --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/server
+        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go-server -o ./server -ppackageName=api -psourceFolder=api --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/server --enable-post-process-file
       - name: Execute go client codegen
-        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go -o ./client -ppackageName=client --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/client
+        run: ./openapi-generator-cli generate -i ./oas_spec_definition/go-auth-api.yaml -g go -o ./client -ppackageName=client --git-user-id=bebo-dot-dev --git-repo-id=go-oas-api-gen-template/client --enable-post-process-file
       - name: Format generated Go code
         shell: bash
         run: goimports -w -v ./ && cd ./server && go get ./... && go fmt ./... && cd ../client && go get ./... && go fmt ./...
