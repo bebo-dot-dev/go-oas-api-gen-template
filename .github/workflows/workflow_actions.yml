@@ -1,4 +1,4 @@
-name: actions
+name: go-codegen
 
 on:
   push:
