@@ -3,10 +3,16 @@ name: actions
 on:
   push:
     paths:
-    - 'oas_spec_definition/*.yaml'
+    - 'oas_spec_definition/*.yaml'  
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'reason'
+        required: false
+        default: 'manual run'
 
 jobs:
-  codegen-go-server:
+  run-go-codegen:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
