@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: go get golang.org/x/tools/cmd/goimports && which gofmt
         env:
-          GO_POST_PROCESS_FILE: $GOROOT/bin/gofmt -w
+          GO_POST_PROCESS_FILE: "gofmt -w"
       - name: Setup the latest openapi-generator-cli
         shell: bash
         run: curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ./openapi-generator-cli && chmod u+x ./openapi-generator-cli
