@@ -26,7 +26,7 @@ jobs:
           go-version: 1.16.6
       - name: Prepare for code formatting
         shell: bash
-        run: go get golang.org/x/tools/cmd/goimports
+        run: go get golang.org/x/tools/cmd/goimports && which gofmt
         env:
           GO_POST_PROCESS_FILE: "$GOROOT/bin/gofmt -w"
       - name: Setup the latest openapi-generator-cli
