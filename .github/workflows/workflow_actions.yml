@@ -20,7 +20,9 @@ jobs:
           go-version: 1.16.6
       - name: Prepare for code formatting
         shell: bash
-        run: export GO_POST_PROCESS_FILE="$GOROOT/bin/gofmt -w" && go get golang.org/x/tools/cmd/goimports
+        run: go get golang.org/x/tools/cmd/goimports
+        env:
+          GO_POST_PROCESS_FILE: "$GOROOT/bin/gofmt -w"
       - name: Setup the latest openapi-generator-cli
         shell: bash
         run: curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ./openapi-generator-cli && chmod u+x ./openapi-generator-cli
